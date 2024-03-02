@@ -15,8 +15,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect(route('dashboard'));
+    return view('signin');
 });
+
+Route::get('/management', function () {
+    return view('management');
+});
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
