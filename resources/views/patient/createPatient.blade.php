@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="flex items-center justify-center h-screen mb-4">
-  <h1 style="font-size: 2rem;" class="font-bold text-center text-gray-900">Editar Paciente</h1>
+  <h1 style="font-size: 2rem;" class="font-bold text-center text-gray-900">Criar Paciente</h1>
 </div>
 <div class="class"></div>
 <form action="" method="POST" class="grid gap-6 mb-6 md:grid-cols-2">

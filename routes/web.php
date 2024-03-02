@@ -88,12 +88,29 @@ Route::get('/editSpecialty', function () {
 Route::get('/editHealthcare', function () {
     return view('/healthcare/editHealthcare');
 });
+
+
 //create
-Route::get('/scheduleSurgery', function () {
-    return view('/surgery/scheduleSurgery');
+Route::get('/createSurgery', function () {
+    return view('/surgery/createSurgery');
 });
 
+Route::get('/createPatient', function () {
+    return view('/patient/createPatient');
+});
 
+Route::get('/createDoctor', function () {
+    return view('/doctor/createDoctor');
+});
+
+Route::get('/createSpecialty', function () {
+    return view('/specialty/createSpecialty');
+});
+
+Route::get('/createHealthcare/{id}', function () {
+    return view('/healthcare/createHealthcare');
+});
+///////
 
 
 
