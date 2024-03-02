@@ -15,20 +15,85 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('signin');
-});
-
-Route::get('/management', function () {
-    return view('management');
+    return view('/all/signin');
 });
 
 Route::get('/signup', function () {
-    return view('signup');
+    return view('/all/signup');
 });
 
 Route::get('/welcome', function () {
-    return view('welcome');
+    return view('/all/welcome');
 });
+
+//////gerenciamento
+Route::get('/managementDashboard', function () {
+    return view('/all/managementDashboard');
+});
+
+Route::get('/surgeryManagement', function () {
+    return view('/surgery/surgeryManagement');
+});
+
+Route::get('/patientManagement', function () {
+    return view('/patient/patientManagement');
+});
+
+Route::get('/doctorsManagement', function () {
+    return view('/doctor/doctorsManagement');
+});
+
+Route::get('/specialtyManagement', function () {
+    return view('/specialty/specialtyManagement');
+});
+Route::get('scheduleSurgery', function () {
+    return view('/surgery/scheduleSurgery');
+});
+
+
+//////view
+Route::get('/viewSurgery', function () {
+    return view('/surgery/viewSurgery');
+});
+Route::get('/viewPatient', function () {
+    return view('/patient/viewPatient');
+});
+Route::get('/viewDoctor', function () {
+    return view('/doctor/viewDoctor');
+});
+Route::get('/viewSpecialty', function () {
+    return view('/specialty/viewSpecialty');
+});
+Route::get('surgeryList', function () {
+    return view('/surgery/surgeryList');
+});
+Route::get('viewHealthcare', function () {
+    return view('/healthcare/viewHealthcare');
+});
+
+
+//edit
+Route::get('/editSurgery', function () {
+    return view('/surgery/editSurgery');
+});
+Route::get('/editPatient', function () {
+    return view('/patient/editPatient');
+});
+Route::get('/editDoctor', function () {
+    return view('/doctor/editDoctor');
+});
+Route::get('/editSpecialty', function () {
+    return view('/specialty/editSpecialty');
+});
+Route::get('/editHealthcare', function () {
+    return view('/healthcare/editHealthcare');
+});
+//create
+Route::get('/scheduleSurgery', function () {
+    return view('/surgery/scheduleSurgery');
+});
+
+
 
 
 
