@@ -55,15 +55,15 @@ Route::get('/specialty/management', [SpecialtyController::class, 'management']);
 */
 
 Route::get('/', function () {
-    return view('/all/signin');
+    return view('/signin');
 });
 
 Route::get('/signup', function () {
-    return view('/all/signup');
+    return view('/signup');
 });
 
 Route::get('/welcome', function () {
-    return view('/all/welcome');
+    return view('/welcome');
 });
 
 

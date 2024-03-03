@@ -1,5 +1,5 @@
 @extends('layouts.header')
-@section('title', 'Gerenciamento')
+@section('title', 'Lista de Procedimentos')
 @extends('layouts.navbarTest')
 @section('content')
 
@@ -29,12 +29,13 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($surgeries as $surgery)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
+                    {{$surgery->name}}
                 </td>
                 <td class="px-6 py-4">
-                    Silver
+                {{$surgery->description}}
                 </td>
                 <td class="px-6 py-4">
                     Data
@@ -44,10 +45,11 @@
                 </td>
                 <td class="px-6 py-4 text-center">
                     <div class="flex justify-center">
-                        <a href="#"><img src="images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
+                        <a href="#"><img src="/images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
                     </div>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

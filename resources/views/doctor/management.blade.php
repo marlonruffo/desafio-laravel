@@ -1,5 +1,5 @@
 @extends('layouts.header')
-@section('title', 'Gerenciamento')
+@section('title', 'Gerenciamento de Médicos')
 @extends('layouts.navbarTest')
 @section('content')
 
