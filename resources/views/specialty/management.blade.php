@@ -30,24 +30,26 @@
             </tr>
         </thead>
         <tbody>
+        @foreach($specialties as $specialty)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Nome da Especialidade
+                    {{$specialty->name}}
                 </td>
                 <td class="px-6 py-4 max-w-xs overflow-hidden">
-                    {{ Illuminate\Support\Str::limit("Descrição da EspecialidadeDescrição da EspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da Ee", 100) }}
+                {{ Illuminate\Support\Str::limit($specialty->description, 100) }}
                 </td>
                 <td class="px-6 py-4">
-                    190,00
+                    {{$specialty->price}}
                 </td>
                 <td class="px-6 py-4 text-center">
                     <div class="flex justify-center">
-                        <a href="/specialty/view"><img src="images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
-                        <a href="/specialty/edit"><img src="images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
-                        <a href="#"><img src="images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
+                        <a href="/specialty/{{$specialty->id}}"><img src="/images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
+                        <a href="/specialty/edit"><img src="/images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
+                        <a href="#"><img src="/images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
                     </div>
                 </td>
             </tr>
+        @endforeach
         </tbody>
     </table>
 </div>

@@ -11,33 +11,40 @@ use App\Http\Controllers\HealthcareController;
 //Surgery
 Route::get('/surgery/create', [SurgeryController::class, 'create']);
 Route::get('/surgery/list', [SurgeryController::class, 'list']);
-Route::get('/surgery/management', [SurgeryController::class, 'management']);
+Route::get('/surgery/management', [SurgeryController::class, 'index']);
 
 //patient
 Route::get('/patient/create', [PatientController::class, 'create']);
 Route::get('/patient/view', [PatientController::class, 'view']);
 Route::get('/patient/edit', [PatientController::class, 'edit']);
-Route::get('/patient/management', [PatientController::class, 'management']);
+Route::get('/patient/management', [PatientController::class, 'index']);
+Route::get('/patient/{id}',[PatientController::class, 'show']);
 
 //doctor
 Route::get('/doctor/create', [DoctorController::class, 'create']);
 Route::get('/doctor/view', [DoctorController::class, 'view']);
 Route::get('/doctor/edit', [DoctorController::class, 'edit']);
-Route::get('/doctor/management', [DoctorController::class, 'management']);
+Route::get('/doctor/management', [DoctorController::class, 'index']);
+Route::get('/doctor/{id}',[DoctorController::class, 'show']);
+Route::post('/doctor', [DoctorController::class, 'store']);
 
 
 //healthcare
 Route::get('/healthcare/create', [HealthcareController::class, 'create']);
 Route::get('/healthcare/view', [HealthcareController::class, 'view']);
 Route::get('/healthcare/edit', [HealthcareController::class, 'edit']);
-Route::get('/healthcare/management', [HealthcareController::class, 'management']);
+Route::get('/healthcare/management', [HealthcareController::class, 'index']);
+Route::post('/healthcare', [HealthcareController::class, 'store']);
+Route::get('/healthcare/{id}', [HealthcareController::class, 'show']);
+
 
 //specialty
 Route::get('/specialty/create', [SpecialtyController::class, 'create']);
 Route::get('/specialty/view', [SpecialtyController::class, 'view']);
 Route::get('/specialty/edit', [SpecialtyController::class, 'edit']);
-Route::get('/specialty/management', [SpecialtyController::class, 'management']);
-
+Route::get('/specialty/management', [SpecialtyController::class, 'index']);
+Route::post('/specialty', [SpecialtyController::class, 'store']);
+Route::get('/specialty/{id}',[SpecialtyController::class, 'show']);
 
 
 

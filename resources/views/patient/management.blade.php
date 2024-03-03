@@ -44,7 +44,7 @@
                 </td>
                 <td class="px-6 py-4 text-center">
                     <div class="flex justify-center">
-                        <a href="/patient/view"><img src="images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
+                        <a href="/patient/{{$patient->id}}"><img src="images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
                         <a href="/patient/edit"><img src="images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
                         <a href="#"><img src="images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
 

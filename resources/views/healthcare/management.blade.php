@@ -30,24 +30,25 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($healthcares as $healthcare)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Nome da Especialidade
+                    {{$healthcare->name}}
                 </td>
                 <td class="px-6 py-4 max-w-xs overflow-hidden">
-                    {{ Illuminate\Support\Str::limit("Descrição da EspecialidadeDescrição da EspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da EeEspecialidadeDescrição da Ee", 100) }}
-                </td>
+                {{ Illuminate\Support\Str::limit($healthcare->description, 100) }}</td>
                 <td class="px-6 py-4">
-                    190,00
+                    {{$healthcare->discount}}
                 </td>
                 <td class="px-6 py-4 text-center">
                     <div class="flex justify-center">
-                        <a href="/healthcare/view"><img src="images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
-                        <a href="/healthcare/edit"><img src="images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
-                        <a href="#"><img src="images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
+                        <a href="/healthcare/{{$healthcare->id}}"><img src="/images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
+                        <a href="/healthcare/edit"><img src="/images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
+                        <a href="#"><img src="/images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
                     </div>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

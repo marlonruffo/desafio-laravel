@@ -19,12 +19,19 @@ class PatientController extends Controller
     {
         return view('patient.edit');
     }
-    public function management()
+    public function index()
     {
         $patients = Patient::all();
         return view('patient.management',[
             'patients' => $patients
         ]);
         return view();
+    }
+    public function show($id)
+    {
+        $patient = Patient::findOrFail($id);
+        return view('patient.show',[
+            'patient' => $patient
+        ]);
     }
 }

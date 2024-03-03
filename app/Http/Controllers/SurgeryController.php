@@ -9,10 +9,7 @@ class SurgeryController extends Controller
 
     public function list()
     {
-        $surgeries = Surgery::all();
-        return view('surgery.list',[
-            'surgeries' => $surgeries
-        ]);
+        
     }
 
     public function create()
@@ -20,9 +17,14 @@ class SurgeryController extends Controller
         return view('surgery.create');
     }
 
-    public function management()
+    public function index()
     {
-        return view('surgery.management');
+        $surgeries = Surgery::all();
+        return view('surgery.list',[
+            'surgeries' => $surgeries
+        ]);
+        
     }
+    
 
 }
