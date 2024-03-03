@@ -3,31 +3,28 @@
 @extends('layouts.navbarTest')
 @section('content')
 
-
-
 <div class="flex items-center justify-center h-screen mb-4">
-  <h1 style="font-size: 2rem;" class="font-bold text-center text-gray-900">Gerenciamento de Pacientes</h1>
+  <h1 style="font-size: 2rem;" class="font-bold text-center text-gray-900">Gerenciamento de Procedimentos</h1>
 </div>
 
-<div class="md:col-span-1 flex justify-end">
-    <button class="new" onclick="window.location.href = 'URL_DA_PAGINA_DESTINO'" style="color: white; background-color: #007bff; border-color: #007bff; border-radius: 5px; padding: 8px 16px; font-size: 16px; cursor: pointer;">Criar</button>
-</div>
-
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Nome do Médico
+                    Tipo de Procedimento
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Especialidade
+                    Médico responsável
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    CRM
+                    Data e hora início
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Data e hora Término
                 </th>
                 <th scope="col" class="px-6 py-3 text-center">
-                    Ação
+                    Cancelar
                 </th>
             </tr>
         </thead>
@@ -40,24 +37,19 @@
                     Silver
                 </td>
                 <td class="px-6 py-4">
-                    Laptop
+                    Data
+                </td>
+                <td class="px-6 py-4">
+                    Data
                 </td>
                 <td class="px-6 py-4 text-center">
                     <div class="flex justify-center">
-                        <a href="link_para_visualizar"><img src="images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
-                        <a href="link_para_editar"><img src="images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
-                        <a href="link_para_deletar"><img src="images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
-
+                        <a href="#"><img src="images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
                     </div>
                 </td>
             </tr>
-
         </tbody>
     </table>
 </div>
-
-
-
-
 
 @endsection

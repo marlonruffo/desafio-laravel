@@ -2,6 +2,18 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SpecialtyController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\SurgeryController;
+use App\Http\Controllers\HealthcareController;
+
+//Surgery
+Route::get('/surgery/createSurgery', [SurgeryController::class, 'create']);
+Route::get('/surgery/surgeryList', [SurgeryController::class, 'index']);
+Route::get('/surgery/surgeryManagement', [SurgeryController::class, 'management']);
+
+//
 
 /*
 |--------------------------------------------------------------------------
@@ -110,7 +122,6 @@ Route::get('/createSpecialty', function () {
 Route::get('/createHealthcare/{id}', function () {
     return view('/healthcare/createHealthcare');
 });
-///////
 
 
 

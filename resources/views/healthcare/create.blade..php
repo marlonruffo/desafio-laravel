@@ -3,6 +3,7 @@
 @extends('layouts.navbarTest')
 @section('content')
 
+<p>Exibindo id: {{$id}}</p>
 <form action="" method="POST" class="w-full max-w-lg">
   @csrf
 
