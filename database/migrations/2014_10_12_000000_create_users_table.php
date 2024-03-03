@@ -16,9 +16,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('cpf')->unique();
+            $table->string('address');
+            $table->string('phone');
             $table->string('password');
+            $table->date('birthdate');
             $table->rememberToken();
             $table->timestamps();
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('login_completed')->default(false);
+            $table->enum('role', ['patient', 'admin','doctor'])->default('patient');
         });
     }
 

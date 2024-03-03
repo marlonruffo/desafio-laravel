@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            // $table->string('doctor');
-            // $table->string('patient');
-            $table->text('description');
+            $table->foreignId('doctor_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('patient_id')->constrained()->cascadeOnDelete();
+            $table->date('begin_at');
+            $table->date('end_at');
+            $table->float('cost');
         });
     }
 
