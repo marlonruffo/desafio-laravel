@@ -7,9 +7,9 @@
     </a>      
     <ul class="flex space-x-8"> 
       <li><a href="/welcome" class="text-white hover:text-gray-300">Início</a></li>
-      <li><a href="/managementDashboard" class="text-white hover:text-gray-300">Gerenciar</a></li>
-      <li><a href="createSurgery" class="text-white hover:text-gray-300">Agendar Procedimento</a></li>
-      <li><a href="surgeryList" class="text-white hover:text-gray-300">Minhas Cirurgias</a></li>
+      <li><a href="/management" class="text-white hover:text-gray-300">Gerenciar</a></li>
+      <li><a href="/surgery/create" class="text-white hover:text-gray-300">Agendar Procedimento</a></li>
+      <li><a href="/surgery/list" class="text-white hover:text-gray-300">Minhas Cirurgias</a></li>
       <li><a href="#" class="text-white hover:text-gray-300">Enviar Email</a></li>
       <li><a href="#" class="text-white hover:text-gray-300">Gerar Relatório</a></li>
       <li><a href="#" class="text-white hover:text-gray-300">Sair</a></li>

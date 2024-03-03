@@ -9,11 +9,39 @@ use App\Http\Controllers\SurgeryController;
 use App\Http\Controllers\HealthcareController;
 
 //Surgery
-Route::get('/surgery/createSurgery', [SurgeryController::class, 'create']);
-Route::get('/surgery/surgeryList', [SurgeryController::class, 'index']);
-Route::get('/surgery/surgeryManagement', [SurgeryController::class, 'management']);
+Route::get('/surgery/create', [SurgeryController::class, 'create']);
+Route::get('/surgery/list', [SurgeryController::class, 'list']);
+Route::get('/surgery/management', [SurgeryController::class, 'management']);
 
-//
+//patient
+Route::get('/patient/create', [PatientController::class, 'create']);
+Route::get('/patient/view', [PatientController::class, 'view']);
+Route::get('/patient/edit', [PatientController::class, 'edit']);
+Route::get('/patient/management', [PatientController::class, 'management']);
+
+//doctor
+Route::get('/doctor/create', [DoctorController::class, 'create']);
+Route::get('/doctor/view', [DoctorController::class, 'view']);
+Route::get('/doctor/edit', [DoctorController::class, 'edit']);
+Route::get('/doctor/management', [DoctorController::class, 'management']);
+
+
+//healthcare
+Route::get('/healthcare/create', [HealthcareController::class, 'create']);
+Route::get('/healthcare/view', [HealthcareController::class, 'view']);
+Route::get('/healthcare/edit', [HealthcareController::class, 'edit']);
+Route::get('/healthcare/management', [HealthcareController::class, 'management']);
+
+//specialty
+Route::get('/specialty/create', [SpecialtyController::class, 'create']);
+Route::get('/specialty/view', [SpecialtyController::class, 'view']);
+Route::get('/specialty/edit', [SpecialtyController::class, 'edit']);
+Route::get('/specialty/management', [SpecialtyController::class, 'management']);
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,90 +66,11 @@ Route::get('/welcome', function () {
     return view('/all/welcome');
 });
 
-//////gerenciamento
-Route::get('/managementDashboard', function () {
-    return view('/all/managementDashboard');
-});
-
-Route::get('/surgeryManagement', function () {
-    return view('/surgery/surgeryManagement');
-});
-
-Route::get('/patientManagement', function () {
-    return view('/patient/patientManagement');
-});
-
-Route::get('/doctorsManagement', function () {
-    return view('/doctor/doctorsManagement');
-});
-
-Route::get('/specialtyManagement', function () {
-    return view('/specialty/specialtyManagement');
-});
-Route::get('scheduleSurgery', function () {
-    return view('/surgery/scheduleSurgery');
-});
 
 
-//////view
-Route::get('/viewSurgery', function () {
-    return view('/surgery/viewSurgery');
-});
-Route::get('/viewPatient', function () {
-    return view('/patient/viewPatient');
-});
-Route::get('/viewDoctor', function () {
-    return view('/doctor/viewDoctor');
-});
-Route::get('/viewSpecialty', function () {
-    return view('/specialty/viewSpecialty');
-});
-Route::get('surgeryList', function () {
-    return view('/surgery/surgeryList');
-});
-Route::get('viewHealthcare', function () {
-    return view('/healthcare/viewHealthcare');
-});
 
 
-//edit
-Route::get('/editSurgery', function () {
-    return view('/surgery/editSurgery');
-});
-Route::get('/editPatient', function () {
-    return view('/patient/editPatient');
-});
-Route::get('/editDoctor', function () {
-    return view('/doctor/editDoctor');
-});
-Route::get('/editSpecialty', function () {
-    return view('/specialty/editSpecialty');
-});
-Route::get('/editHealthcare', function () {
-    return view('/healthcare/editHealthcare');
-});
 
-
-//create
-Route::get('/createSurgery', function () {
-    return view('/surgery/createSurgery');
-});
-
-Route::get('/createPatient', function () {
-    return view('/patient/createPatient');
-});
-
-Route::get('/createDoctor', function () {
-    return view('/doctor/createDoctor');
-});
-
-Route::get('/createSpecialty', function () {
-    return view('/specialty/createSpecialty');
-});
-
-Route::get('/createHealthcare/{id}', function () {
-    return view('/healthcare/createHealthcare');
-});
 
 
 

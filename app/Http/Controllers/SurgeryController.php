@@ -9,17 +9,17 @@ class SurgeryController extends Controller
 
     public function index()
     {
-        return view('surgery.surgeryList');
+        return view('surgery.list');
     }
 
     public function create()
     {
-        return view('surgery.createSurgery');
+        return view('surgery.create');
     }
 
     public function management()
     {
-        return view('surgery.surgeryManagement');
+        return view('surgery.management');
     }
 
 }

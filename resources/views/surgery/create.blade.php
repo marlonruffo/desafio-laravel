@@ -29,10 +29,7 @@
         <input type="datetime-local" id="senha" name="senha" value="*********" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
     </div>
 
-    <div>
-        <label for="endereco" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data e hora Término</label>
-        <input type="datetime-local" id="endereco" name="endereco" value="123 Main St, City, Country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
-    </div>
+
 
     <div class="md:col-span-1 flex justify-end"> 
         <button type="submit" class="new" style="color: white; background-color: #007bff; border-color: #007bff; border-radius: 5px; padding: 8px 16px; font-size: 16px; cursor: pointer;">Agendar</button>
