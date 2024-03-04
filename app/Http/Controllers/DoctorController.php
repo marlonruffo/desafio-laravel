@@ -21,10 +21,8 @@ class DoctorController extends Controller
     }
     public function index()
     {
-        $doctors = Doctor::all(); 
-        return view('doctor.management',[
-            'doctors' => $doctors
-        ]);
+        $doctors = Doctor::all();
+        return view('doctor.management')->with('doctors', $doctors);
         
     }
     public function store(Request $request){
@@ -56,4 +54,5 @@ class DoctorController extends Controller
             'doctor' => $doctor
         ]);
     }
+
 }

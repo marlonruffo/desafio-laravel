@@ -20,9 +20,7 @@ class SurgeryController extends Controller
     public function index()
     {
         $surgeries = Surgery::all();
-        return view('surgery.list',[
-            'surgeries' => $surgeries
-        ]);
+        return view('surgery.management')->with('surgeries', $surgeries);
         
     }
     

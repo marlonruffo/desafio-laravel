@@ -7,44 +7,54 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SurgeryController;
 use App\Http\Controllers\HealthcareController;
+use App\Models\Healthcare;
 
 //Surgery
-Route::get('/surgery/create', [SurgeryController::class, 'create']);
-Route::get('/surgery/list', [SurgeryController::class, 'list']);
-Route::get('/surgery/management', [SurgeryController::class, 'index']);
+Route::get('/surgeries/create', [SurgeryController::class, 'create'])->name('surgery.create');
+Route::get('/mysurgeries', [SurgeryController::class, 'list'])->name('surgery.list');
+Route::get('/surgeries', [SurgeryController::class, 'index'])->name('surgeries.index');
+Route::delete('/surgeries/{surgery}', [SurgeryController::class, 'destroy'])->name('surgeries.destroy');
 
 //patient
-Route::get('/patient/create', [PatientController::class, 'create']);
-Route::get('/patient/view', [PatientController::class, 'view']);
-Route::get('/patient/edit', [PatientController::class, 'edit']);
-Route::get('/patient/management', [PatientController::class, 'index']);
-Route::get('/patient/{id}',[PatientController::class, 'show']);
+
+Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
+Route::get('/patients/create', [PatientController::class, 'create'])->name('patients.create');
+Route::post('/patients', [PatientController::class, 'store'])->name('patients.store');
+Route::get('/patients/{patient}', [PatientController::class, 'show'])->name('patients.show');
+Route::get('/patients/{patient}/edit', [PatientController::class, 'edit'])->name('patients.edit');
+Route::put('/patients/{patient}', [PatientController::class, 'update'])->name('patients.update');
+Route::delete('/patients/{patient}', [PatientController::class, 'destroy'])->name('patients.destroy');
+
+
 
 //doctor
-Route::get('/doctor/create', [DoctorController::class, 'create']);
-Route::get('/doctor/view', [DoctorController::class, 'view']);
-Route::get('/doctor/edit', [DoctorController::class, 'edit']);
-Route::get('/doctor/management', [DoctorController::class, 'index']);
-Route::get('/doctor/{id}',[DoctorController::class, 'show']);
-Route::post('/doctor', [DoctorController::class, 'store']);
+Route::get('/doctors', [DoctorController::class, 'index'])->name('doctors.index');
+Route::get('/doctors/create', [DoctorController::class, 'create'])->name('doctors.create');
+Route::post('/doctors', [DoctorController::class, 'store'])->name('doctors.store');
+Route::get('/doctors/{doctor}', [DoctorController::class, 'show'])->name('doctors.show');
+Route::get('/doctors/{doctor}/edit', [DoctorController::class, 'edit'])->name('doctors.edit');
+Route::put('/doctors/{doctor}', [DoctorController::class, 'update'])->name('doctors.update');
+Route::delete('/doctors/{doctor}', [DoctorController::class, 'destroy'])->name('doctors.destroy');
 
 
 //healthcare
-Route::get('/healthcare/create', [HealthcareController::class, 'create']);
-Route::get('/healthcare/view', [HealthcareController::class, 'view']);
-Route::get('/healthcare/edit', [HealthcareController::class, 'edit']);
-Route::get('/healthcare/management', [HealthcareController::class, 'index']);
-Route::post('/healthcare', [HealthcareController::class, 'store']);
-Route::get('/healthcare/{id}', [HealthcareController::class, 'show']);
+Route::get('/healthcares', [HealthcareController::class, 'index'])->name('healthcares.index');
+Route::get('/healthcares/create', [HealthcareController::class, 'create'])->name('healthcares.create');
+Route::post('/healthcares', [HealthcareController::class, 'store'])->name('healthcares.store');
+Route::get('/healthcares/{healthcare}', [HealthcareController::class, 'show'])->name('healthcares.show');
+Route::get('/healthcares/{healthcare}/edit', [HealthcareController::class, 'edit'])->name('healthcares.edit');
+Route::put('/healthcares/{healthcare}', [HealthcareController::class, 'update'])->name('healthcares.update');
+Route::delete('/healthcares/{healthcare}', [HealthcareController::class, 'destroy'])->name('healthcares.destroy');
 
 
 //specialty
-Route::get('/specialty/create', [SpecialtyController::class, 'create']);
-Route::get('/specialty/view', [SpecialtyController::class, 'view']);
-Route::get('/specialty/edit', [SpecialtyController::class, 'edit']);
-Route::get('/specialty/management', [SpecialtyController::class, 'index']);
-Route::post('/specialty', [SpecialtyController::class, 'store']);
-Route::get('/specialty/{id}',[SpecialtyController::class, 'show']);
+Route::get('/specialties', [SpecialtyController::class, 'index'])->name('specialties.index');
+Route::get('/specialties/create', [SpecialtyController::class, 'create'])->name('specialties.create');
+Route::post('/specialties', [SpecialtyController::class, 'store'])->name('specialties.store');
+Route::get('/specialties/{specialty}', [SpecialtyController::class, 'show'])->name('specialties.show');
+Route::get('/specialties/{specialty}/edit', [SpecialtyController::class, 'edit'])->name('specialties.edit');
+Route::put('/specialties/{specialty}', [SpecialtyController::class, 'update'])->name('specialties.update');
+Route::delete('/specialties/{specialty}', [SpecialtyController::class, 'destroy'])->name('specialties.destroy');
 
 
 
@@ -61,16 +71,15 @@ Route::get('/specialty/{id}',[SpecialtyController::class, 'show']);
 |
 */
 
+
+
+
+
 Route::get('/', function () {
-    return view('/signin');
-});
-
-Route::get('/signup', function () {
-    return view('/signup');
-});
-
-Route::get('/welcome', function () {
     return view('/welcome');
+});
+Route::get('/management', function () {
+    return view('/management');
 });
 
 

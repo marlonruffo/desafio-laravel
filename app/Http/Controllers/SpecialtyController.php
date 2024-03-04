@@ -21,10 +21,8 @@ class SpecialtyController extends Controller
     }
     public function index()
     {
-        $specialties = Specialty::all(); 
-        return view('specialty.management',[
-            'specialties' => $specialties
-        ]);
+        $specialties = Specialty::all();
+        return view('specialty.management')->with('specialties', $specialties);
         
     }
 
@@ -35,7 +33,7 @@ class SpecialtyController extends Controller
         $specialty->description = $request->description;
         $specialty->price = $request->price;
         $specialty->save();
-        return redirect('/specialty/management');
+        return redirect('/specialties');
     }
     public function show($id)
     {

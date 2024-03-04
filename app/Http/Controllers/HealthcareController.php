@@ -21,10 +21,10 @@ class HealthcareController extends Controller
     }
     public function index()
     {
-        $healthcares = Healthcare::all(); 
-        return view('healthcare.management',[
-            'healthcares' => $healthcares
-        ]);
+        //return view('healthcare.management');
+        $healthcares = Healthcare::all();
+        return view('healthcare.management')->with('healthcares', $healthcares);
+        
         
     }
     public function store(Request $request)
@@ -34,7 +34,7 @@ class HealthcareController extends Controller
         $healthcare->description = $request->description;
         $healthcare->discount = $request->discount;
         $healthcare->save();
-        return redirect('/healthcare/management');
+        return redirect('/healthcares');
     }
     public function show($id)
     {

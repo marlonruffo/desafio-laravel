@@ -22,10 +22,7 @@ class PatientController extends Controller
     public function index()
     {
         $patients = Patient::all();
-        return view('patient.management',[
-            'patients' => $patients
-        ]);
-        return view();
+        return view('patient.management')->with('patients', $patients);
     }
     public function show($id)
     {
