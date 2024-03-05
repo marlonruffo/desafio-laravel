@@ -8,6 +8,7 @@
 </div>
 <div class="class"></div>
 <form action="/surgeries" method="POST" class="grid gap-6 mb-6 md:grid-cols-2">
+<form action="/surgeries" method="POST" class="grid gap-6 mb-6 md:grid-cols-2">
     @csrf
     <div>
         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de procedimento</label>

@@ -45,4 +45,5 @@ class DoctorController extends Controller
         $doctor->update($data);
         return redirect('/doctors');
     }
+
 }

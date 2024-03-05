@@ -16,16 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('cpf')->unique();
-            $table->string('address');
-            $table->string('phone');
             $table->string('password');
-            $table->date('birthdate')->nullable();
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
-            $table->boolean('is_admin')->default(false);
-            $table->boolean('login_completed')->default(false);
-            $table->enum('role', ['patient', 'admin','doctor'])->default('patient');
         });
     }
 

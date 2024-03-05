@@ -9,11 +9,12 @@
 
 <div class="md:col-span-1 flex justify-end">
     <button class="new" onclick="window.location.href = '/surgeries/create'" style="color: white; background-color: #007bff; border-color: #007bff; border-radius: 5px; padding: 8px 16px; font-size: 16px; cursor: pointer;">Criar</button>
+    <button class="new" onclick="window.location.href = '/surgeries/create'" style="color: white; background-color: #007bff; border-color: #007bff; border-radius: 5px; padding: 8px 16px; font-size: 16px; cursor: pointer;">Criar</button>
 </div>
 
 <div class="overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Tipo de Procedimento
@@ -43,8 +44,10 @@
                 </td>
                 <td class="px-6 py-4">
                     {{ $surgery->begin_at }}
+                    {{ $surgery->begin_at }}
                 </td>
                 <td class="px-6 py-4">
+                    {{ $surgery->end_at }}
                     {{ $surgery->end_at }}
                 </td>
                 <td class="px-6 py-4 text-center">
@@ -57,9 +60,18 @@
     <img src="/images/delete.png" alt="Delete logo" class="w-6 h-6">
 </button>
                         </form>
+    
+                        <form action="{{ route('surgeries.destroy', $surgery->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                        <button type="submit" style="border: none; background: none; padding: 0; margin: 0;">
+    <img src="/images/delete.png" alt="Delete logo" class="w-6 h-6">
+</button>
+                        </form>
                     </div>
                 </td>
             </tr>
+    @endforeach
     @endforeach
         </tbody>
     </table>
