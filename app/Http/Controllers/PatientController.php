@@ -9,7 +9,8 @@ class PatientController extends Controller
 {
     public function create()
     {
-        return view('patient.create');
+        $patient = new Patient();
+        return view('patient.create', compact('patient'));
     }
     public function view()
     {
@@ -17,21 +18,27 @@ class PatientController extends Controller
     }
     public function edit()
     {
-        return view('patient.edit');
+        return view('patient.edit', compact('patient'));
     }
     public function index()
     {
         $patients = Patient::all();
-        return view('patient.management',[
-            'patients' => $patients
-        ]);
-        return view();
+        return view('patient.management', compact('patients'));
     }
     public function show($id)
     {
-        $patient = Patient::findOrFail($id);
-        return view('patient.show',[
-            'patient' => $patient
-        ]);
+        return view('patient.show', compact('patient'));
+    }
+    public function store(Request $request)
+    {
+        $data=($request->all());
+        Patient::create($data);
+        return redirect('/patients');
+    }
+    public function update(Request $request, Patient $patient)
+    {
+        $data = $request->all();
+        $patient->update($data);
+        return redirect('/patients');
     }
 }

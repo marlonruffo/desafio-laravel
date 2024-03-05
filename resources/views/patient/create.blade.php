@@ -7,7 +7,7 @@
   <h1 style="font-size: 2rem;" class="font-bold text-center text-gray-900">Criar Paciente</h1>
 </div>
 <div class="class"></div>
-<form action="" method="POST" class="grid gap-6 mb-6 md:grid-cols-2">
+<form action="/patients" method="POST" class="grid gap-6 mb-6 md:grid-cols-2">
     @csrf
     <div>
         <label for="nome" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>

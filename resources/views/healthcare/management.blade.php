@@ -8,7 +8,7 @@
 </div>
 
 <div class="md:col-span-1 flex justify-end">
-    <button class="new" onclick="window.location.href = '/healthcare/create'" style="color: white; background-color: #007bff; border-color: #007bff; border-radius: 5px; padding: 8px 16px; font-size: 16px; cursor: pointer;">Criar</button>
+    <button class="new" onclick="window.location.href = '/healthcares/create'" style="color: white; background-color: #007bff; border-color: #007bff; border-radius: 5px; padding: 8px 16px; font-size: 16px; cursor: pointer;">Criar</button>
 </div>
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -42,9 +42,15 @@
                 </td>
                 <td class="px-6 py-4 text-center">
                     <div class="flex justify-center">
-                        <a href="/healthcare/{{$healthcare->id}}"><img src="/images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
-                        <a href="/healthcare/edit"><img src="/images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
-                        <a href="#"><img src="/images/delete.png" alt="Delete logo" class="w-6 h-6"></a>
+                    <a href="{{route('healthcares.show', $healthcare->id)}}"><img src="/images/view.png" alt="View Logo" class="w-6 h-6 mr-2" style="cursor: pointer;"></a>
+                        <a href="{{route('healthcares.edit', $healthcare->id)}}"><img src="/images/edit.png" alt="Edit Logo" class="w-6 h-6 mr-2"></a>
+                        <form action="{{ route('healthcares.destroy', $healthcare->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                        <button type="submit" style="border: none; background: none; padding: 0; margin: 0;">
+    <img src="/images/delete.png" alt="Delete logo" class="w-6 h-6">
+</button>
+                        </form>
                     </div>
                 </td>
             </tr>

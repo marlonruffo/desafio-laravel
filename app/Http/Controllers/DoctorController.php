@@ -9,51 +9,40 @@ class DoctorController extends Controller
 {
     public function create()
     {
-        return view('doctor.create');
+        $doctor = new Doctor();
+        return view('doctor.create', compact('doctor'));
     }
     public function view()
     {
         return view('doctor.view');
     }
-    public function edit()
+    public function edit(Doctor $doctor)
     {
-        return view('doctor.edit');
+        return view('doctor.edit', compact('doctor'));
     }
     public function index()
     {
-        $doctors = Doctor::all(); 
-        return view('doctor.management',[
-            'doctors' => $doctors
-        ]);
+        $doctors = Doctor::all();
+        return view('doctor.management', compact('doctors'));
         
     }
     public function store(Request $request){
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->cpf = $request->cpf;
-        $user->address = $request->address;
-        $user->phone = $request->phone;
-        $user->password = $request->password;
-        $user->birthdate = $request->birthdate;
-        $user->role = 'doctor';
-        $doctor = new Doctor();
-        $doctor->work_time = $request->work_time;
-        $doctor->crm = $request->crm;
-        $doctor->specialty_id = $request->specialty_id;
-        $user->save();
-        $doctor->user_id = $user->id;
-        $doctor->save();
+        $data=($request->all());
+        Doctor::create($data);
+        return redirect('/doctors');
         
         
         return redirect('/doctor/management');
     
     }
-    public function show($id)
+    public function show(Doctor $doctor)
     {
-        $doctor = Doctor::findOrFail($id);
-        return view('doctor.show',[
-            'doctor' => $doctor
-        ]);
+        return view('doctor.show', compact('doctor'));
+    }
+    public function update(Request $request, Doctor $doctor)
+    {
+        $data = $request->all();
+        $doctor->update($data);
+        return redirect('/doctors');
     }
 }

@@ -9,38 +9,48 @@ class HealthcareController extends Controller
 {
     public function create()
     {
-        return view('healthcare.create');
+        $healthcare = new Healthcare();
+        return view('healthcare.create', compact('healthcare'));
     }
+
     public function view()
     {
         return view('healthcare.view');
     }
-    public function edit()
+
+    public function edit(Healthcare $healthcare)
     {
-        return view('healthcare.edit');
+        return view('healthcare.edit', compact('healthcare'));
     }
+
     public function index()
     {
-        $healthcares = Healthcare::all(); 
-        return view('healthcare.management',[
-            'healthcares' => $healthcares
-        ]);
-        
+        $healthcares = Healthcare::all();
+        return view('healthcare.management', compact('healthcares'));
     }
+
     public function store(Request $request)
     {
-        $healthcare = new Healthcare();
-        $healthcare->name = $request->name;
-        $healthcare->description = $request->description;
-        $healthcare->discount = $request->discount;
-        $healthcare->save();
-        return redirect('/healthcare/management');
+        $data = $request->all();
+        Healthcare::create($data);
+        return redirect('/healthcares');
     }
-    public function show($id)
+
+    public function show(Healthcare $healthcare)
     {
-        $healthcare = Healthcare::findOrFail($id);
-        return view('healthcare.show',[
-            'healthcare' => $healthcare
-        ]);
+        return view('healthcare.show', compact('healthcare'));
+    }
+
+    public function update(Request $request, Healthcare $healthcare)
+    {
+        $data = $request->all();
+        $healthcare->update($data);
+        return redirect('/healthcares');
+    }
+
+    public function destroy(Healthcare $healthcare)
+    {
+        $healthcare->delete();
+        return redirect('/healthcares');
     }
 }

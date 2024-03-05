@@ -4,7 +4,7 @@
 @section('content')
 
 
-<form action="/healthcare" method="POST" class="w-full max-w-lg">
+<form action="/healthcares" method="POST" class="w-full max-w-lg">
   @csrf
 
   <div class="flex items-center justify-center h-screen mb-4">

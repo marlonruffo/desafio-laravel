@@ -3,7 +3,7 @@
 @extends('layouts.navbarTest')
 @section('content')
 
-<form action="/specialty" method="POST" class="w-full max-w-lg">
+<form action="/specialties" method="POST" class="w-full max-w-lg">
   @csrf
 
   <div class="flex items-center justify-center h-screen mb-4">

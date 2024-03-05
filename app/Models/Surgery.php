@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Surgery extends Model
 {
     use HasFactory;
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function specialty()
+    {
+        return $this->hasOne(Specialty::class);
+    }
 }

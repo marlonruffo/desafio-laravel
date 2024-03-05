@@ -9,39 +9,48 @@ class SpecialtyController extends Controller
 {
     public function create()
     {
-        return view('specialty.create');
+        $specialty = new Specialty();
+
+        return view('specialty.create', compact('specialty'));
     }
+
     public function view()
     {
         return view('specialty.view');
     }
-    public function edit()
+
+    public function edit(Specialty $specialty)
     {
-        return view('specialty.edit');
+        return view('specialty.edit', compact('specialty'));
     }
+
     public function index()
     {
         $specialties = Specialty::all(); 
-        return view('specialty.management',[
-            'specialties' => $specialties
-        ]);
-        
+        return view('specialty.management', compact('specialties'));
     }
 
     public function store(Request $request)
     {
-        $specialty = new Specialty();
-        $specialty->name = $request->name;
-        $specialty->description = $request->description;
-        $specialty->price = $request->price;
-        $specialty->save();
-        return redirect('/specialty/management');
+        $data = $request->all();
+        Specialty::create($data);
+        return redirect('/specialties');
     }
-    public function show($id)
+
+    public function show(Specialty $specialty)
     {
-        $specialty = Specialty::findOrFail($id);
-        return view('specialty.show',[
-            'specialty' => $specialty
-        ]);
+        return view('specialty.show', compact('specialty'));
+    }
+
+    public function update(Request $request, Specialty $specialty)
+    {
+        $data = $request->all();
+        $specialty->update($data);
+        return redirect('/specialties');
+    }
+    public function destroy(Specialty $specialty)
+    {
+        $specialty->delete();
+        return redirect('/specialties');
     }
 }
